@@ -56,10 +56,23 @@ command.
  * `cdk docs`        open CDK documentation
 
 
-## Locally invoking Lambda functions via SAM
+## Locally invoking non-containerized Lambda functions via SAM
 
 ```bash
 $ sam local invoke -t ./cdk.out/LambdagraderStack.template.json IntroFunction
+```
+
+## Locally invoking containerized (Docker) Lambda functions via SAM
+
+```bash
+# synthesize the stack into a CloudFormation template
+$ cdk synth
+
+# build before invoking a docker lambda function using SAM
+$ sam build -t ./cdk.out/LambdagraderStack.template.json
+
+# invoke the containerized lambda function
+$ sam local invoke -t ./cdk.out/LambdagraderStack.template.json ExampleDockerFunction
 ```
 
 
