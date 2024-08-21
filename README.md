@@ -55,4 +55,12 @@ command.
  * `cdk diff`        compare deployed stack with current state
  * `cdk docs`        open CDK documentation
 
+
+## Locally invoking Lambda functions via SAM
+
+```bash
+$ sam local invoke -t ./cdk.out/LambdagraderStack.template.json IntroFunction
+```
+
+
 Enjoy!

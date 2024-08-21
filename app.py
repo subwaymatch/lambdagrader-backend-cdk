@@ -3,11 +3,11 @@ import os
 
 import aws_cdk as cdk
 
-from lambdagrader_cdk.lambdagrader_cdk_stack import LambdagraderCdkStack
+from lambdagrader.lambdagrader_stack import LambdagraderStack
 
 
 app = cdk.App()
-LambdagraderCdkStack(app, "LambdagraderCdkStack",
+LambdagraderStack(app, "LambdagraderStack",
     # If you don't specify 'env', this stack will be environment-agnostic.
     # Account/Region-dependent features and context lookups will not work,
     # but a single synthesized template can be deployed anywhere.
